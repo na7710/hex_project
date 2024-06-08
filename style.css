@@ -1,0 +1,513 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*圖片自適應大小*/
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+/*全域 border box*/
+*,*:before,*:after{
+	box-sizing: border-box;
+}
+
+body{
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    display:flex;
+    height: 96px;
+    background: #FFF;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.header-wrap{
+    margin: 0 auto;
+    width: 1296px;
+    display: flex;
+    justify-content: space-between; /*左右靠底*/
+}
+
+.logo, .menu-btn{
+    width: 90px;
+    height: 40px;
+    margin: auto 0;
+    align-items: center; /*置中對齊*/
+}
+
+.menu-btn span{
+    display:none;
+}
+
+.logo a{
+    display: block;
+}
+
+.menu{
+    max-width: 480px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.menu-control{
+    display: none;
+  }
+
+.menu li a{
+    color: #000;
+    display: block;
+    padding: 4px 8px;
+}
+
+.menu li a:hover{
+    font-weight: 900;
+    position: relative;
+}
+
+.menu li a:hover:before,
+.menu li a:hover:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #919191;
+    -webkit-box-reflect: below 16px;
+}
+
+.menu li a:hover:before{
+    left: 0;
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+.menu li a:hover:after{
+    right: 0;
+    border-left: 0px;
+    border-bottom: 0px;
+}
+
+/* ---------banner--------- */
+
+.banner-bg{
+    background-color: #FAFAFA;
+    padding: 80px 0px;
+}
+
+.banner-top{
+    max-width: 670px;
+    height: 192px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /*置中對齊*/
+    align-items: center; /*置中對齊*/
+    position: relative;
+}
+
+.quote{
+    display: flex;
+    flex-direction:column; /*↓由上到下，類似區塊元素另起一行*/
+    gap:16px;
+}
+
+.quote p{
+    font-size: 24px;
+    line-height: 28.8px;
+    text-align: center;
+}
+
+.highlight{
+    /*參考 https://codepen.io/Ana-Wu/pen/ZENYOyr*/
+    background: url(img/mark.png) no-repeat;
+    background-position: 0.5em bottom;
+    padding-right: 16px;
+}
+
+.quote::before,
+.quote::after{
+    content: "";
+    display: block;
+    width: 72px;
+    height: 72px;
+    position: absolute;
+}
+
+.quote::before{
+    background: url(img/quote-left.png) no-repeat top left;
+    top: 0;
+    left: 0;
+}
+
+.quote::after{
+    background: url(img/quote-right.png) no-repeat right bottom;
+    bottom: 0;
+    right: 0;
+}
+
+.banner-bottom{
+    max-width: 636px;
+    margin: 0 auto;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between; /*左右靠底*/
+    gap: 40px;
+}
+
+.banner-bottom .item{
+    display: flex;
+    flex-direction:column; /*↓由上到下，類似區塊元素另起一行*/
+}
+
+.banner-bottom .item h2{
+    color: #5B5B5B;
+    text-align: center;
+}
+
+.banner-bottom .item h2::after{
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 24px;
+    margin-top: 4px;
+    border-bottom: 2px solid #C1C1C1;
+}
+
+.banner-bottom .item p{
+    margin-top: 8px;
+    text-align: center;
+}
+
+/*---------內容----------*/
+
+.container{
+    margin: 120px 0;
+}
+
+.card-wrap{
+    max-width:1296px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 80px 24px;
+}
+  
+.card li{
+    width: calc(50% - 12px); /* 參考 https://codepen.io/swk9eny2/pen/MWdyEyB */
+}
+  
+.card img{
+    border:1px solid #F1F1F1;
+    border-radius: 8px;
+}
+  
+.content{
+    padding: 4px 16px;
+}
+  
+.content h2{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+  
+.content p{
+    margin-top: 8px;
+    color: #919191;
+}
+  
+.tags{
+    margin-top: 24px;
+    display: flex;
+    gap:10px;
+}
+  
+.tags a{
+    color: #3B3B3B;
+    padding: 4px 12px;
+    background: #F1F1F1;
+    border-radius: 16px;
+}
+
+.page{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center; /*置中對齊*/
+    gap:10px;
+}
+
+.page a{
+    font-size: 24px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: #000;
+    text-align: center;
+    line-height: 40px;
+}
+
+.page span a,
+.page a:hover{
+    color: #FFF;
+    background: #000;
+    border-radius: 4px;
+}
+
+/*---------footer----------*/
+
+.footer-bg{
+    background: url(https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/2024%20web-camp/footer-bg-lg.png) no-repeat;
+    background-position: center center;
+    height: 424px;
+    border-top: solid #FAFAFA 1px;
+}
+  
+.footer{
+    font-size: 20px;
+    color: #3B3B3B;
+    max-width: 1296px;
+    height: 424px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.footer a{
+    color: #919191;
+}
+  
+.contact{
+    max-width: 686px;
+    display: flex;
+    flex-direction:column; /*↓由上到下，類似區塊元素另起一行*/
+    justify-content: center; /*置中對齊*/
+    gap:24px;
+}
+  
+.contact p{
+    line-height: 30px;
+}
+  
+.sns{
+    gap: 24px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center; /*置中對齊*/
+}
+  
+.sns a{
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #C1C1C1;
+    padding: 8px 24px;
+    line-height: 30px;
+    width: 306px;
+    background: #FFF;
+}
+  
+.sns a:hover{
+    background: #000;
+    font-weight: 700;
+    color: #FFF;
+}
+  
+.sns img{
+    height: 56px;
+    vertical-align:middle;
+    margin-right: 8px;
+}
+
+/*---------RWD----------*/
+
+@media(max-width:1295px) {
+
+    .header-wrap,
+    .card-wrap,
+    .footer{
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+}
+
+@media(max-width:767px) {
+
+    /*menu*/
+    .header{
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        height: 56px;
+    }
+
+    .menu-control:checked .menu{
+        position: fixed;
+        top: 56px;
+        z-index: 2;
+        background: #000;
+    }
+
+    .menu-btn{
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        top:8px;
+        right:12px;
+     }
+    .menu-btn span{
+        display: block;
+        font-size: 40px;
+    }
+
+    /*banner*/
+    .banner-bg{
+        margin-top: 56px;
+        display: flex;
+        flex-direction:column; /*↓由上到下，類似區塊元素另起一行*/
+        gap: 40px;
+    }
+
+    .banner-top{
+        max-width: 300px;
+    }
+
+    .highlight{
+        background-position: 0.8em bottom;
+        background-size:90%;
+        padding-right: 6px;
+    }
+
+    .quote::before{
+        position: static;
+        margin: 0 auto;
+    }
+
+    .quote::after{
+        display:none;
+    }
+
+    .banner-bottom{
+        flex-direction:column; /*↓由上到下，類似區塊元素另起一行*/
+        width: calc(100% - 12px); /* 參考 https://codepen.io/swk9eny2/pen/MWdyEyB */
+    }
+
+    /*container*/
+
+    .card{
+        flex-direction:column; /*↓由上到下，類似區塊元素另起一行*/
+        margin: 0 auto;
+    }
+    .card li{
+        width: 100%;
+    }
+
+    /*footer*/
+    .footer-bg{
+        background-position: left center;
+        background-size: cover;
+        height: 100%;
+        padding: 40px 0;
+    }
+
+    .footer{
+        flex-direction:column; /*↓由上到下，類似區塊元素另起一行*/
+        align-items: center; /*置中對齊*/
+        height: 100%;
+        gap: 40px;
+    }
+
+    .contact{
+        font-size: 16px;
+        align-items: center; /*置中對齊*/
+    }
+
+    .contact a{
+        height: 54px;
+    }
+
+    .contact p{
+        line-height: 24px;
+    }
+
+    .sns a{
+        height: 64px;
+    }
+
+}
+
+@media(max-width:375px) {
+
+    /*banner*/
+
+
+    .banner-bottom{
+        max-width: 235px;
+    }
+
+    /*footer*/
+
+    .footer-bg{
+        background: url(/img/footer-bg-sm.png) no-repeat;
+    }
+
+}
